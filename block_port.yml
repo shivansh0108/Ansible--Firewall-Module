@@ -1,0 +1,9 @@
+---
+- hosts: demo
+  tasks:
+        - firewalld:
+                port: 161/udp
+                zone: block
+                permanent: yes
+                immediate: yes
+                state: enabled

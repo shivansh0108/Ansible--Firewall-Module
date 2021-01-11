@@ -1,0 +1,14 @@
+---
+- hosts: demo
+  tasks:
+        - name: Enable HTTPS for ansible controller
+          firewalld:
+                source: 192.168.56.104
+                service : https
+                zone: internal
+                state: enabled
+                permanent: yes
+
+        - service:
+                name: firewalld
+                state: reloaded
